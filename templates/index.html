@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block title %}
+    Welcome!
+{% endblock %}
+
+{% block content %}
+<nav>
+    <div class= 'text-red-900 my-2 p-2'>
+        <a href="{% url "contact" %}">Contact us</a>
+        <a href="{% url "about" %}">About us</a>
+        <a class= 'font-bold w-20 text-red-800 text-center rounded-md hover:bg-yellow-200'href="{% url "ishuapp" %}">My Cafe</a>
+        <a href="admin/">Admin Login</a>
+    </div>
+</nav>
+<h1 class= 'text-4xl text-amber-100 pb-2'>Welcome to the page</h1>
+<img class='bg-slate-800 size-[60%] rounded-xl mx-auto' src="https://imgflip.com/s/meme/Leonardo-Dicaprio-Cheers.jpg" alt="welcome">
+{% endblock %}

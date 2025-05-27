@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(62, 25, 13);
+}
+
+nav a {
+    font-weight: bold;
+    position: relative;
+    text-decoration: none;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    background: #7e4e28;
+    transition: width 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+}
+
+nav>div {
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    background: linear-gradient(90deg, #ada996 0%, #f2f2f2 33%, #dbdbdb 66%, #eaeaea 100%);
+}

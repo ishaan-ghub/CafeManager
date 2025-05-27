@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+store table
+{% endblock %}
+
+{% block content %}
+<nav class='mb-3 text-lg'>
+    <div class='py-1 mt-1'>
+        <a href="{% url "home" %}" class='text-red-800'>Home</a>
+        <a href="{% url "ishuapp" %}" class='text-red-800'>Our app</a>
+    </div> 
+</nav>
+<div class= 'text-red-400'>
+    <form method="POST"> 
+    {% csrf_token %}
+    {{form}}
+        <button type= 'submit' class='text-rose-600 text-sm bg-lime-200 p-1 rounded-lg font-bold'> Search store </button>
+    </form>
+</div>
+
+{% if stores %}
+<span class='text-center'>
+    <h2 class='bg-orange-100 text-amber-900 font-bold text-2xl my-2'>Stores available</h2>
+    <ul>
+        {% for store in stores %}
+        <li class='text-lg font-'> {{store.name}} - {{store.location}} </li>
+        {% endfor %}
+    </ul>
+</span>
+
+{% endif %}
+{% endblock %}

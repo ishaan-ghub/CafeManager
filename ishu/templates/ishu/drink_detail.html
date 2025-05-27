@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{% block title %}
+Drink details
+{% endblock %}
+
+{% block content %}
+<nav class='h-5'>
+    <button class='mt-5' onclick="goBack()">
+        <img class='h-10 w-full mt-1'
+            src="https://cdn-icons-png.freepik.com/256/4202/4202824.png?ga=GA1.1.1503402826.1722511264&semt=ais_hybrid"
+            alt="back button">
+    </button>
+</nav>
+<h2 class='text-4xl pb-2 text-center bg-orange-200 text-amber-950 font-bold'>{{drink.name}}
+</h2>
+<div class='grid'>
+    <div class='flex bg-red-400 mx-4 my-2 rounded-md'>
+        <img class='shadow-lg h-[400px] p-4' src="{{drink.image.url}}" alt="image not loaded">
+        <div class='block justify-center w-full'>
+            <h3 class='text-center text-yellow-900 font-bold bg-orange-200 mt-5 mr-4 h-8 content-center'>About the drink
+            </h3>
+            <p class='text-white p-2 text-lg'>{{drink.description}}</p>
+        </div>
+    </div>
+    <button class='text-center bg-yellow-200 text-orange-800 text-lg p-2 mx-4 rounded-sm hover:bg-orange-800 hover:text-yellow-200'>
+        Buy now @{{drink.prices}}
+    </button>
+</div>
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
+{% endblock %}
