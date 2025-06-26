@@ -11,17 +11,17 @@
         <a href="{% url 'home' %}">Home</a>
     </div> 
 </nav>
-<h1 class= 'text-4xl text-amber-100 pb-2'>Welcome to the app🫡</h1>
+<h1 class= 'text-4xl text-amber-100 pb-2'>What would you like to have today ⬇️</h1>
 <div class= 'grid grid-cols-3 gap-5 text-slate-200 m-4 shadow-gray-'>
     {% for drink in drinks %}
-    <div class = 'p-2 backdrop-blur-md bg-white/10'>
+    <div class = 'p-2 backdrop-blur-md bg-white/10 hover:shadow-[0_0_5px_white]'>
         <img class= 'shadow-lg h-[63%] w-full' src="{{drink.image.url}}" alt="can't load image">
         <div class= 'block h-[25%]'>
             <h3 class= 'mt-5 font-semibold text-center text-2xl'>{{drink.name}}</h3>
             <h2 class= 'text-rose-700 text-lg bg-yellow-400 w-[50%] h-8 mt-5 text-center rounded-lg'>{{drink.prices}}</h2>
         </div>
         <a href="{% url "drink_detail" drink.id %}">
-            <button class= 'text-yellow-800 font-semibold bg-orange-200 w-[100%] inline-block py-1 rounded-md'>
+            <button class= 'text-yellow-800 font-semibold bg-orange-200 w-[100%] inline-block py-1 rounded-md hover:bg-amber-700 hover:text-white hover:font-semibold'>
                 View
             </button>
         </a>
